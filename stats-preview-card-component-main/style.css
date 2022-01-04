@@ -1,19 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
 
 *{
-    box-sizing: border-box;
-}
-
-body{
     margin: 0;
-    background-color: hsl(233, 47%, 7%);
-    font-size: 15px;
-}
-
-.container{
-    display: flex;
-    padding: 140px;
-    flex-wrap: wrap;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 h1{
@@ -21,6 +11,7 @@ h1{
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     letter-spacing: 0.05rem;
+    padding-bottom: 20px;
 }
 
 h2{
@@ -31,92 +22,105 @@ h2{
 p{
     color: hsla(0, 0%, 100%, 0.75);
     font-family: 'Lexend Deca', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
     line-height: 1.5rem;
 }
 
-.left{
+body{
+    margin: 0;
+    background-color: hsl(233, 47%, 7%);
+    font-size: 15px;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.section{
+    width: 70vw;
+    border-radius: 10px;
+    display: flex;
+    
+}
+
+.section .left{
     background-color: hsl(244, 38%, 16%);
-    border-radius: 10px 0 0 10px;
-    padding: 60px 80px;
-    padding-right: 120px;
-    width: 50%;
     display: flex;
     flex-direction: column;
+    width: 50%;
+    padding: 60px;
     justify-content: space-between;
-   
+    border-radius: 10px 0 0 10px;
 }
-.right-card {
+
+.section .left .stats{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.section .right-card{
     background-image: url('./images/image-header-desktop.jpg');
+    background-color: hsl(277, 64%, 61%);
+    background-blend-mode: multiply;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 0 10px 10px 0;
-    height: 450px;
-    width: 550px;
     width: 50%;
-  }
-  
-  .right-card::after {
-    background-color: #550081;
-    border-radius: 0 10px 10px 0;
-    content: '';
-    height: 450px;
-    opacity: .5;
-    position: absolute;
-    width: 580px;
-  }
-  
-  .stats{
-      display: flex;
-      justify-content: space-between;
-  }
-  
-  .insights{
+}
+
+.insights{
       color: hsl(277, 64%, 61%);
   }
 
-  @media screen and (max-width: 650px) {
-    
-    .container{
+@media (max-width: 750px) {
+
+    .section{
         flex-direction: column-reverse;
-    }
-    
-    .stats{
-        flex-direction: column;
-    }
-
-    .container{
-        padding: 60px 40px;
+        justify-content: space-between;
+        width: 80vw;
+        height: 90vh;
     }
 
-    .left{
+    .section .left{
         width: 100%;
-        border-radius: 0 0 10px 10px ;
-        height: 50%;
+        height: 70%;
+        text-align: center;
+        border-radius: 0 0 10px 10px;
+        padding: 30px;
+        justify-content: space-between;
     }
 
-    .right-card {
+    .section .left .stats{
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .section .left .stats > div {
+        padding: 10px;
+    }
+    .section .right-card{
         background-image: url('./images/image-header-mobile.jpg');
+        background-color: hsl(277, 64%, 61%);
+        background-blend-mode: multiply;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         border-radius: 10px 10px 0 0;
-        height: 450px;
-        width: 550px;
         width: 100%;
-      }
-      
-    .right-card::after {
-        background-color: #550081;
-        border-radius: 10px 10px 0 0;
-        content: '';
-        height: 450px;
-        opacity: .5;
-        position: absolute;
-        width: 420px;
-      }
-    
-    h1, h2, p{
-        text-align: center;
+        height: 30%;
     }
-  }
+
+    h1 {
+        font-size: 2em;
+    }
+    
+}
